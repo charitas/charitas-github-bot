@@ -1,19 +1,24 @@
 {
-  "name": "eslint-github-bot",
+  "name": "charitas-github-bot",
   "version": "0.1.0",
-  "description": "Plugin based Github bot for ESLint",
+  "description": "Plugin based Github bot for Charitas",
+  "now": {
+    "alias": "charitas-bot.now.sh"
+  },
   "main": "./src/app.js",
   "scripts": {
+    "deploy": "./deploy.sh",
     "lint": "eslint src tests .eslintrc.js",
     "lint:fix": "npm run lint -- --fix",
+    "now-start": "PRIVATE_KEY=$(echo $PRIVATE_KEY_BASE64 | base64 -d) npm start",
     "start": "node ./src/app.js",
     "test": "npm run lint && jest --colors --verbose",
     "test:cover": "jest --colors --coverage"
   },
-  "author": "Gyandeep Singh <gyandeeps@gmail.com>",
+  "author": "Kyle Bradford <kfoxb@kfoxb.com>",
   "license": "MIT",
-  "repository": "eslint/eslint-github-bot",
-  "bugs": "https://github.com/eslint/eslint-github-bot/issues/",
+  "repository": "charitas/charitas-github-bot",
+  "bugs": "https://github.com/charitas/charitas-github-bot/issues/",
   "dependencies": {
     "moment": "^2.21.0",
     "moment-timezone": "^0.5.14",
@@ -29,8 +34,7 @@
   "keywords": [
     "bot",
     "github",
-    "events",
-    "eslint"
+    "events"
   ],
   "jest": {
     "testMatch": [

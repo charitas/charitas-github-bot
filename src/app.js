@@ -29,12 +29,8 @@ const bot = probot({
 });
 const enabledPlugins = new Set([
     "commitMessage",
-    "issueArchiver",
     "needsInfo",
-    "triage",
-    "recurringIssues",
-    "releaseMonitor",
-    "wip"
+    "triage"
 ]);
 
 // load all the enabled plugins from inside plugins folder

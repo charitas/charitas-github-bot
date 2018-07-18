@@ -8,13 +8,10 @@
 
 const { getCommitMessageForPR } = require("../utils");
 
-const TAG_REGEX = /^(?:Breaking|Build|Chore|Docs|Fix|New|Update|Upgrade):/;
+const TAG_REGEX = /^(?:build|ci|chore|docs|feat|fix|perf|refactor|revert|style|test):/;
 const MESSAGE_LENGTH_LIMIT = 72;
 
-const EXCLUDED_REPOSITORY_NAMES = new Set([
-    "eslint.github.io",
-    "tsc-meetings"
-]);
+const EXCLUDED_REPOSITORY_NAMES = new Set([]);
 
 /**
  * Apply different checks on the commit message
@@ -69,7 +66,7 @@ async function processCommitMessage(context) {
         context.repo({
             sha: allCommits.data[allCommits.data.length - 1].sha,
             state,
-            target_url: "https://github.com/eslint/eslint-github-bot/blob/master/docs/commit-message-check.md",
+            target_url: "https://github.com/charitas/charitas-github-bot/blob/master/docs/commit-message-check.md",
             description,
             context: "commit-message"
         })

@@ -1,9 +1,7 @@
-[![Build Status](https://travis-ci.org/eslint/eslint-github-bot.svg?branch=master)](https://travis-ci.org/eslint/eslint-github-bot)
-
-ESLint GitHub bot
+Charitas GitHub bot forked from [ESLint Github bot](https://github.com/eslint/eslint-github-bot/)
 ==========================
 
-`eslint-github-bot` is a bot created with [probot](https://github.com/probot/probot) which automates some common tasks for repositories run by the ESLint team.
+`charitas-github-bot` is a bot created with [probot](https://github.com/probot/probot) which automates some common tasks for Charitas repositories.
 
 The bot can perform the following tasks:
 
@@ -26,12 +24,22 @@ The bot can perform the following tasks:
 * Start the app
     * `npm start` to start it as a GitHub APP
 
-### ENV variables required:
+### Github App
+When you create your Github app, you will at least need these permissions:
+ - Checks: read & write
+ - Repository contents: read only
+ - Repository meta data: read only
+ - Pull requests: read only
+ - Commit statuses: read & write
 
-* `PORT`: Port for web server _(optional, defaults to 8000)_.
-* `SECRET`: Secret setup for GitHub webhook or you generated when you created the app.
-* `PRIVATE_KEY`: the contents of the private key you downloaded after creating the app.
-* `APP_ID`: The numeric app ID
+ You will also want to subscribe to these events:
+  - Label
+  - Pull request
+
+
+### ENV variables:
+
+Copy deploy.example.sh to deploy.sh & set all environmental variables in deploy.sh
 
 #### Adding plugins
 
